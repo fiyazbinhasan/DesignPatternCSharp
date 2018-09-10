@@ -1,4 +1,4 @@
-using Decorator.Interface;
+using Decorator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Decorator.Test
