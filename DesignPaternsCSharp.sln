@@ -3,11 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight", "Flyweight\Flyweight.csproj", "{940070D0-71F7-4883-A251-27BD0C722E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight.Test", "Flyweight.Test\Flyweight.Test.csproj", "{19CBC9DA-8B32-4AD7-9355-CC18167AD2ED}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15BC84E1-DBB3-49D6-9B02-4E0DDEA02D88}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{940070D0-71F7-4883-A251-27BD0C722E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940070D0-71F7-4883-A251-27BD0C722E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940070D0-71F7-4883-A251-27BD0C722E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940070D0-71F7-4883-A251-27BD0C722E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19CBC9DA-8B32-4AD7-9355-CC18167AD2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CBC9DA-8B32-4AD7-9355-CC18167AD2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CBC9DA-8B32-4AD7-9355-CC18167AD2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CBC9DA-8B32-4AD7-9355-CC18167AD2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
