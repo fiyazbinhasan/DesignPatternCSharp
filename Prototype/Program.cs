@@ -6,24 +6,54 @@ namespace Prototype
     {
         static void Main(string[] args)
         {
-            Customer cust = new Customer();
-            cust.FirstName = "Bla";
-            cust.LastName = "Gla";
-            cust.Address = new Address()
+            Person husband = new Person
             {
-                PrimaryAddress = "123",
-                SecondaryAddress = "232"
+                Name = "Jon Doe",
+                Address = new Address
+                {
+                    FlatNo = "12/3",
+                    StreetNo = "456 Main Street",
+                    City = "New York",
+                    Country = "USA"
+                }
             };
 
-            var address = (Address) cust.Address.Clone();
-            address.PrimaryAddress = "rent";
+            Person wife = new Person
+            {
+                Name = "Jane Doe",
+                Address = new Address
+                {
+                    FlatNo = "7/89",
+                    StreetNo = "101 Secondary Street",
+                    City = "Toronto",
+                    Country = "Cannada"
+                }
+            };
 
-            var customerClone = (Customer) cust.Clone();
+            Couple couple = new Couple
+            {
+                Husband = husband,
+                Wife = wife
+            };
 
-            Console.WriteLine(cust.Address.PrimaryAddress = "srw");
+            Console.WriteLine($"{husband.Name} Address: {husband.Address}");
+            Console.WriteLine($"{wife.Name} Address: {wife.Address}");
 
-            Console.WriteLine(address.PrimaryAddress);
-            Console.WriteLine(customerClone.Address.PrimaryAddress);
+            Console.WriteLine($"===================================");
+            couple.PersonMovedIn(wife);
+            Console.WriteLine($"===================================");
+
+            switch (couple.WhoMovedIn.Name)
+            {
+                case "Jon Doe":
+                    couple.Address = (Address)wife.Address.Clone();
+                    break;
+                case "Jane Doe":
+                    couple.Address = (Address)husband.Address.Clone();
+                    break;
+            }
+
+            Console.WriteLine($"{couple.Husband.Name} & {couple.Wife.Name} Address : {couple.Address}");
 
             Console.ReadLine();
         }
