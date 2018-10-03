@@ -29,6 +29,8 @@ namespace Iterator.Test
 
             ShoppingCart shoppingCart = new ShoppingCart(items);
 
+            Assert.IsAssignableFrom<IIterable>(shoppingCart);
+
             Assert.IsAssignableFrom<IIterator>(shoppingCart.GetIterator());
             Assert.IsType<ShoppingCartIterator>(shoppingCart.GetIterator());
         }
