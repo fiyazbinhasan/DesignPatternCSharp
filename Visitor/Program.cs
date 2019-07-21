@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Mail;
+using Visitor.CreditCards;
+using Visitor.Offers;
 
 namespace Visitor
 {
@@ -8,16 +10,14 @@ namespace Visitor
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ICreditCard goldCard = new GoldCreditCard();
+            ICreditCard platinumCard = new PlatinumCreditCard();
 
-            PrimeDay primeDay = new PrimeDay();
-
-            Game dmc = new Game { Title = "Devil May Cry", Price = 39.99M };
-            Book gof = new Book { Title = "Gang of Four", Price = 45.99M };
-
-            Console.WriteLine($"{dmc.Title}\tRegular Price: {dmc.Price:#.##}\tPrime Day Offer: {dmc.Participate(primeDay):#.##}");
-
-            Console.WriteLine($"{gof.Title}\tRegular Price: {gof.Price:#.##}\tPrime Day Offer: {gof.Participate(primeDay):#.##}");
+            IOfferVisitor primeDay = new PrimeDay();
+            IOfferVisitor blackFriday = new BlackFriday();
+            
+            goldCard.Accept(primeDay);
+            platinumCard.Accept(blackFriday);
 
             Console.ReadLine();
         }
