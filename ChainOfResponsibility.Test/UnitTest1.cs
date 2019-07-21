@@ -15,15 +15,15 @@ namespace ChainOfResponsibility.Test
             nodeA.Link(nodeB);
             nodeB.Link(nodeC);
 
-            nodeA.HandleTask((int nodeId) => Assert.Equal(1, nodeId));
+            nodeA.HandleTask(nodeId => Assert.Equal(1, nodeId));
 
             nodeA.IsBusy = true;
 
-            nodeA.HandleTask((int nodeId) => Assert.Equal(2, nodeId));
+            nodeA.HandleTask(nodeId => Assert.Equal(2, nodeId));
 
             nodeB.IsBusy = true;
 
-            nodeA.HandleTask((int nodeId) => Assert.Equal(3, nodeId));
+            nodeA.HandleTask(nodeId => Assert.Equal(3, nodeId));
         }
     }
 }

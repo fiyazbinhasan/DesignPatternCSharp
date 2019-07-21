@@ -6,7 +6,7 @@ namespace ChainOfResponsibility
         public int NodeId { get; set; }
         public bool IsBusy { get; set; }
 
-        public INode _nextNode;
+        private INode _nextNode;
 
         public void HandleTask(Action<int> action)
         {
