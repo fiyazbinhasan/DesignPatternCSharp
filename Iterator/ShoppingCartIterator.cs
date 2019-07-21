@@ -3,26 +3,26 @@ namespace Iterator
 {
     public class ShoppingCartIterator : IIterator
     {
-        public CartItem[] _items;
+        private readonly CartItem[] _items;
 
-        int position = -1;
+        int _position = -1;
 
         public ShoppingCartIterator(CartItem[] items)
         {
             _items = items;
         }
 
-        public object Current => _items[position];
+        public object Current => _items[_position];
 
         public bool MoveNext()
         {
-            position++;
-            return (position < _items.Length);
+            _position++;
+            return (_position < _items.Length);
         }
 
         public void Reset()
         {
-            position = -1;
+            _position = -1;
         }
     }
 }

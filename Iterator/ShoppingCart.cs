@@ -3,7 +3,7 @@ namespace Iterator
 {
     public class ShoppingCart : IIterable
     {
-        CartItem[] _items;
+        readonly CartItem[] _items;
 
         public ShoppingCart(CartItem[] items)
         {
