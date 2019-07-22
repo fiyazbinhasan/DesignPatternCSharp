@@ -5,12 +5,12 @@ namespace TemplateMethod
 {
     public class Flatly : Theme
     {
-        public override List<string> GetStyles()
+        protected override List<string> GetStyles()
         {
             return new List<string> {
-                "cosmo.css",
-                "cosmo.min.css",
-                "cosmo.scss"
+                "flatly.css",
+                "flatly.min.css",
+                "flatly.scss"
             };
         }
     }

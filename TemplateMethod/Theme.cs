@@ -5,7 +5,7 @@ namespace TemplateMethod
 {
     public abstract class Theme
     {
-        public List<string> GetScripts()
+        private IEnumerable<string> GetScripts()
         {
             return new List<string> {
                 "jquery.js",
@@ -13,7 +13,7 @@ namespace TemplateMethod
             };
         }
 
-        public abstract List<string> GetStyles();
+        protected abstract List<string> GetStyles();
 
         public List<string> DownloadBundle(bool includeScript)
         {

@@ -5,7 +5,7 @@ namespace TemplateMethod
 {
     public class Cosmo : Theme
     {
-        public override List<string> GetStyles()
+        protected override List<string> GetStyles()
         {
             return new List<string> {
                 "cosmo.css",
