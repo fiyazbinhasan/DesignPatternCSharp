@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactory
 {
-    public abstract class Mainboard
+    public abstract class MotherBoard
     {
         public abstract string[] Combine(CPU cpu);
     }

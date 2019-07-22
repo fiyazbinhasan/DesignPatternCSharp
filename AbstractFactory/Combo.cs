@@ -1,21 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AbstractFactory
 {
     public class Combo
     {
-        private Mainboard _mainboard;
-        private CPU _cpu;
+        private readonly MotherBoard _motherBoard;
+        private readonly CPU _cpu;
 
         public Combo(VendorFactory vendor)
         {
-            _cpu = vendor.CreateCPU();
-            _mainboard = vendor.GetMainboard();
+            _cpu = vendor.GetCpu();
+            _motherBoard = vendor.GetMotherboard();
         }
 
-        public string[] CreateCombo()
+        public IEnumerable<string> CreateCombo()
         {
-            return _mainboard.Combine(_cpu);
+            return _motherBoard.Combine(_cpu);
         }
     }
 }

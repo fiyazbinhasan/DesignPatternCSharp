@@ -2,7 +2,7 @@
 {
     public abstract class VendorFactory
     {
-        public abstract CPU CreateCPU();
-        public abstract Mainboard GetMainboard();
+        public abstract CPU GetCpu();
+        public abstract MotherBoard GetMotherboard();
     }
 }

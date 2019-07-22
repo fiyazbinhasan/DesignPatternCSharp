@@ -2,12 +2,12 @@
 {
     public class IntelFactory : VendorFactory
     {
-        public override CPU CreateCPU()
+        public override CPU GetCpu()
         {
             return new SkylakeI9();
         }
 
-        public override Mainboard GetMainboard()
+        public override MotherBoard GetMotherboard()
         {
             return new StrixX299();
         }

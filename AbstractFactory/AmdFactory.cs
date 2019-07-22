@@ -3,12 +3,12 @@ namespace AbstractFactory
 {
     public class AmdFactory : VendorFactory
     {
-        public override CPU CreateCPU()
+        public override CPU GetCpu()
         {
             return new Ryzen5();
         }
 
-        public override Mainboard GetMainboard()
+        public override MotherBoard GetMotherboard()
         {
             return new StrixB450();
         }
