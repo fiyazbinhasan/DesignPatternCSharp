@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Bridge
 {
-    public class TeamsAPI : IPlatformAPI
+    public class SlackApi : IPlatformApi
     {
+
         public IEnumerable<string> LoadMessages()
         {
-            return new List<string>() {
+            return new[] { 
                 "Hi!",
-                "Welcome to Microsoft Teams",
+                "Welcome to Slack!",
                 "This should be easy.",
-                "Have a quick tour",
-                "We put a lot of stuff you might be interested in"
+                "Have a quick tour"
             };
         }
     }

@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Bridge
 {
     public abstract class Subscription
     {
-        protected IPlatformAPI _platformAPI;
+        private readonly IPlatformApi _platformApi;
+        private readonly int _maxVisibleMessages;
 
-        public virtual int MaxLimitOnMessages { get; set; } = 0;
-
-        public IPlatformAPI PlatformAPI
+        protected Subscription(IPlatformApi platformApi, int maxVisibleMessages)
         {
-            set { _platformAPI = value; }
+            _platformApi = platformApi;
+            _maxVisibleMessages = maxVisibleMessages;
         }
 
-        public Subscription(IPlatformAPI platformAPI)
-        {
-            _platformAPI = platformAPI;
-        }
-
-        public virtual IEnumerable<string> GetMessages() {
-            return _platformAPI.LoadMessages();
+        public IEnumerable<string> GetMessages() {
+            return _platformApi.LoadMessages().Take(_maxVisibleMessages);
         }
     }
 }

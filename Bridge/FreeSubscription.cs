@@ -6,16 +6,9 @@ namespace Bridge
 {
     public class FreeSubscription : Subscription
     {
-        public FreeSubscription(IPlatformAPI platformAPI) : base(platformAPI)
+        public FreeSubscription(IPlatformApi platformApi, int maxVisibleMessages) : base(platformApi, maxVisibleMessages)
         {
             
-        }
-
-        //public override int MaxLimitOnMessages { get; set; }
-
-        public override IEnumerable<string> GetMessages()
-        {
-            return _platformAPI.LoadMessages().Take(MaxLimitOnMessages);
         }
     }
 }

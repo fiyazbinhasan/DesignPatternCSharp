@@ -11,16 +11,16 @@ namespace Bridge.Test
         [Fact]
         public void Test1()
         {
-            var mockPlatformAPI = new Mock<IPlatformAPI>();
+            var mockPlatformApi = new Mock<IPlatformApi>();
 
-            mockPlatformAPI.Setup(x => x.LoadMessages()).Returns(new List<string> {
+            mockPlatformApi.Setup(x => x.LoadMessages()).Returns(new List<string> {
                 "Hi!",
                 "Welcome to Slack!",
                 "This should be easy.",
                 "Have a quick tour" 
             });
 
-            var slackSubscription = new FreeSubscription(mockPlatformAPI.Object) {  MaxLimitOnMessages = 3};
+            var slackSubscription = new FreeSubscription(mockPlatformApi.Object, 3);
             Assert.Equal(3, slackSubscription.GetMessages().Count());
         }
     }

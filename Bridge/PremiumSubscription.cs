@@ -6,14 +6,9 @@ namespace Bridge
 {
     public class PremiumSubscription : Subscription
     {
-        public PremiumSubscription(IPlatformAPI platformAPI) : base(platformAPI)
+        public PremiumSubscription(IPlatformApi platformApi) : base(platformApi, Int32.MaxValue)
         {
-
-        }
-
-        public override IEnumerable<string> GetMessages()
-        {
-            return _platformAPI.LoadMessages();
+            
         }
     }
 }

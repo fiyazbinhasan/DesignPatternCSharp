@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bridge
 {
-    public interface IPlatformAPI
+    public interface IPlatformApi
     {
         IEnumerable<string> LoadMessages();
     }
