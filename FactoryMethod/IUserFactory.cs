@@ -3,6 +3,6 @@ namespace FactoryMethod
 {
     public interface IUserFactory
     {
-        IApplicationUser CreateUser(string userType);
+        IApplicationUser CreateUser(UserType user);
     }
 }

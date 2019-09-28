@@ -1,19 +1,18 @@
 ﻿using System;
 namespace FactoryMethod
 {
+    public enum UserType
+    {
+        Customer,
+        Supplier
+    }
     public class UserFactory : IUserFactory
     {
-        public IApplicationUser CreateUser(string userType)
+        public IApplicationUser CreateUser(UserType user) => user switch
         {
-            switch (userType.ToUpper())
-            {
-                case "SUPPLIER":
-                    return new Supplier();
-                case "CUSTOMER":
-                    return new Customer();
-                default:
-                    return null;
-            }
-        }
+            UserType.Supplier => new Supplier(),
+            UserType.Customer => new Customer(),
+            _ => throw new ArgumentException("Not a known user")
+        };
     }
 }

@@ -8,11 +8,11 @@ namespace FactoryMethod
         {
             IUserFactory factory = new UserFactory();
 
-            var userOne = factory.CreateUser("SUPPLIER");
-            Console.WriteLine(userOne.GetType());
+            var userOne = factory.CreateUser(UserType.Supplier);
+            Console.WriteLine(userOne);
 
 
-            var userTwo = factory.CreateUser("Customer");
+            var userTwo = factory.CreateUser(UserType.Customer);
             Console.WriteLine(userTwo.GetType());
 
             Console.ReadLine();

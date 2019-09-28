@@ -10,8 +10,8 @@ namespace FactoryMethod.Test
         {
             IUserFactory factory = new UserFactory();
 
-            var userOne = factory.CreateUser("SUPPLIER");
-            var userTwo = factory.CreateUser("Customer");
+            var userOne = factory.CreateUser(UserType.Supplier);
+            var userTwo = factory.CreateUser(UserType.Customer);
 
             Assert.IsType<Supplier>(userOne);
             Assert.IsType<Customer>(userTwo);
